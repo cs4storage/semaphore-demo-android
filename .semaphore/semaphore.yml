@@ -6,9 +6,9 @@ agent:
     os_image: ubuntu2004
   containers:
     - name: main
-      image: 'semaphoreci/ubuntu:20.04'
+      image: 'tmp0230/base-0920:vnc-xfce-chromium'
 execution_time_limit:
-  hours: 4
+  hours: 6
 global_job_config:
   env_vars:
     - name: ADB_INSTALL_TIMEOUT
